@@ -1,1 +1,3 @@
-# sdl-plus-plus
+#SDL++
+
+(Yet another) (currently minimalistic) C++ wrapper for SDL.
