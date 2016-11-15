@@ -10,8 +10,7 @@ int main()
     
     try
     {
-        Control ctl { }; // Control the SDL subsystems
-        ctl.pass(); // Suppress the warning
+        Control _ { }; // Control the SDL subsystems
         
         Screen_properties props { }; // What our window will look like
         
@@ -25,16 +24,16 @@ int main()
         Main_loop ml 
         {
             [&scrn, &angle]()
-            { // Do something
+            {
                 scrn.add_draw("pixel.bmp", { 0, 0 });
                 scrn.add_draw("pixel.bmp", { 1, 0 });
                 scrn.add_draw("pixel.bmp", { 0, 1 });
                 scrn.add_draw("pixel.bmp", { 1, 1 });
                 
                 Line l { { 50, 50 }, angle, 20 };
-                Color c { 255, 0, 0, 255 };
+                SDL_Color c { 255, 0, 0, 255 };
                 
-                scrn.add_draw(l, c);
+                scrn.add_draw(l, c); // Draw the line l with the color c
                 
                 scrn.redraw({ 0, 0, 255, 255 });
                 
